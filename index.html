@@ -24,6 +24,34 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        @keyframes lights {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(-10px);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
         .btn {
             --bs-btn-padding-x: 0.75rem;
             --bs-btn-padding-y: 0.325rem;
@@ -126,112 +154,5 @@
            <button class="btn btn-outline-light" onclick="location.href='https:\/\/github.com/GalaxyGZS'">Github</button>
            <button class="btn btn-outline-light" onclick="location.href='https:\/\/galaxyprogram.github.io/about'">关于我们</button>
     </div>
-    <script>
-        var step = 0;
-        document.addEventListener(
-            "mousedown",
-            function (e) {
-                let block = document.createElement("div");
-                let rBlock1 = document.createElement("div");
-                let circle = document.createElement("div");
-                block.style.position = "fixed";
-                block.style.width = "10px";
-                block.style.height = "10px";
-                block.style.opacity = "0";
-                block.style.background = "none";
-                block.style.border = "1px solid gray";
-                block.style.left = `${e.clientX - 5}px`;
-                block.style.top = `${e.clientY - 5}px`;
-                block.style.boxShadow = "0 0 2px rgba(255, 255, 255, 0.7)";
-                rBlock1.style.position = "fixed";
-                rBlock1.style.width = "10px";
-                rBlock1.style.height = "10px";
-                rBlock1.style.opacity = "0";
-                rBlock1.style.background = "none";
-                rBlock1.style.border = "1px solid gray";
-                rBlock1.style.left = `${e.clientX - 5}px`;
-                rBlock1.style.top = `${e.clientY - 5}px`;
-                circle.style.position = "fixed";
-                circle.style.width = "10px";
-                circle.style.height = "10px";
-                circle.style.opacity = "0";
-                circle.style.background = "none";
-                circle.style.border = "1px solid gray";
-                circle.style.left = `${e.clientX - 5}px`;
-                circle.style.top = `${e.clientY - 5}px`;
-                circle.style.borderRadius = "50%";
-                circle.style.transform = "scale(5)";
-                document.body.appendChild(block);
-                document.body.appendChild(rBlock1);
-                document.body.appendChild(circle);
-                block.animate(
-                    [
-                        {
-                            transform: "none",
-                            opacity: "0"
-                        },
-                        {
-                            transform: "scale(2)",
-                            opacity: "1"
-                        },
-                        {
-                            transform: "scale(4)",
-                            opacity: "0"
-                        }
-                    ],
-                    {
-                        duration: 500,
-                        easing: "ease-out"
-                    }
-                ).onfinish = function () {
-                    block.remove();
-                };
-                rBlock1.animate(
-                    [
-                        {
-                            transform: "none",
-                            opacity: "0"
-                        },
-                        {
-                            transform: "scale(3) rotate(40deg)",
-                            opacity: "1"
-                        },
-                        {
-                            transform: "scale(6) rotate(80deg)",
-                            opacity: "0"
-                        }
-                    ],
-                    {
-                        duration: 500,
-                        easing: "ease-out"
-                    }
-                ).onfinish = function () {
-                    rBlock1.remove();
-                };
-                circle.animate(
-                    [
-                        {
-                            transform: "scale(5)",
-                            opacity: "0"
-                        },
-                        {
-                            transform: "scale(3)",
-                            opacity: "1"
-                        },
-                        {
-                            transform: "scale(1)",
-                            opacity: "0"
-                        }
-                    ],
-                    {
-                        duration: 500,
-                        easing: "ease-out"
-                    }
-                ).onfinish = function () {
-                    circle.remove();
-                };
-            }
-        )
-    </script>
 </body>
 </html>
