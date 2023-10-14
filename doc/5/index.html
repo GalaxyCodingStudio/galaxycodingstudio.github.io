@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>银河编程文档-扩展使用指南</title>
+    <meta name="description" content="银河编程网是一个搭载在线版图形化少儿编程的平台，发掘无限创意，开启编程之旅！">
+    <meta name="keywords" content="scratch，银河，银河编程，编程平台，银河编程网，scratch在线编程，scratch平台">
+    <link type="text/css" rel="stylesheet" href="/css/main.css"/>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <script src="/js/not.js"></script>
+    <style>
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .dark-mode {
+      background-color: #333; /* 深色背景色 */
+      color: #f5f5f5; /* 深色文字颜色 */
+    }
+    </style>
+</head>
+<body>
+    <script>
+        function toggleDarkMode() {
+          document.body.classList.add('dark-mode');
+        }
+    
+        function toggleLightMode() {
+          document.body.classList.remove('dark-mode');
+        }
+      </script>
+    <div class="screen">
+        <nav class="navbar navbar-expand-lg nav">
+        	<div class="container-fluid">
+        		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        		   <span class="navbar-toggler-icon"></span>
+        	    </button>
+        	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        			<li class="nav-item">
+                        <a class="navbar-brand logo-image index-logo-img" href="/doc">
+                           <strong><span style="font-size:25px">银河编程文档站</span></strong>
+                        </a>
+                    </li>
+              <div class="navbar-nav-right-box">
+        		<ul class="navbar-nav navbar-nav-right">   
+                    <button class="btn btn-outline-light" onclick="location.href='/main'">回到首页</button>
+                    <button onclick="toggleDarkMode()" class="btn btn-outline-light">深色模式</a>
+                    <button onclick="toggleLightMode()" class="btn btn-outline-light">浅色模式</a>
+        		</ul>
+        	  </div>
+            </div>
+        </nav>
+    </div>
+<div class="doc-leftCard">
+  <br><br><br><br>
+  <ul>
+    <li>
+       <a href="/doc/1" class="doc-a" style="color:#bbb">用户服务协议</a><br><br>
+    </li>
+    <li>
+        <a href="/doc/2" class="doc-a" style="color:#bbb">赞助我们</a><br><br>
+     </li>
+     <li>
+        <a href="/doc" class="doc-a" style="color:#bbb">介绍</a><br><br>
+     </li>
+     <li>
+        <a href="/doc/4" class="doc-a" style="color:#bbb">银河编程网功能大全</a><br><br>
+     </li>
+     <li>
+        <a href="/doc/5" class="doc-a" style="color:#bbb">银河编辑器扩展使用指南</a><br><br>
+     </li>
+     <li>
+        <a href="/doc/6" class="doc-a" style="color:#bbb">银河编程api</a><br><br>
+     </li>
+  </ul>
+</div>
+<div class="doc-rightCard">
+    <h1>Scratch入门教程&扩展使用指南</h1><br>
+       <h2>一.Scratch入门教程</h2>
+          <h3>1.了解Scratch</h3>
+             <span>Scratch 是一款免费的编程语言和在线社区平台，由麻省理工学院（MIT）媒体实验室开发。Scratch 的目标是帮助孩子们学习如何用创造性的方式思考、理解和沟通计算机编程的概念。Scratch 使用图形化编程界面，通过拖拽模块式积木来实现编程，这使得编程变得更加有趣易懂，并让所有年龄层的人都能够快速上手。在 Scratch 社区中，用户可以分享他们的项目、获取灵感和交流经验。Scratch 在很多国家的学校都被广泛采用，为年轻一代打下了扎实的编程基础。</span><br><br>
+          <h3>2.动手操作</h3>
+             <span>
+              打开银河编程中的在线版编辑器（http://galaxycodingstudios.github.io/TurboWarp/），并创建一个新项目。<br>
+                <span style="color:#bbb">*这是二次开发过的银河编程版编辑器（TurboWarp，与Scratch差不多，都是少儿图形化编程软件）。</span><br>
+              在工作区的舞台上，拖动一个角色（可以是猫、狗、人物等）到舞台中心。<br>
+                <span style="color:#bbb">*每个作品都至少有1个角色。当然，你也可以不用角色，在背景里面编写脚本。</span><br>
+              在积木块区域选择控制类别，并从中拖动“当绿旗被点击”积木块到脚本区域。<br>   
+                <span style="color:#bbb">*作品中必须要有“当绿旗被点击”这个积木块作为开头才能运行你写的程序。</span><br>
+              从“运动”类别中选择一个移动积木块（例如“移动10步”），将其连接到“当绿旗被点击”积木块下方。<br><br>          
+              在舞台左上角点击绿旗图标，看到你的角色向前移动了10步。<br>           
+                <span style="color:#bbb">*点击绿旗图标可以运行程序，点击旁边的红色圆形按钮是暂停程序。</span><br>
+              继续探索其他积木块。例如，从“外观”类别中选择一个改变角色外观的积木块，将其连接到已有的积木块下方。<br><br>
+              点击绿旗图标，观察角色的外观发生了改变。<br><br>
+              可以使用更多的积木块来添加互动和条件。尝试使用事件类别中的按键事件或鼠标事件，以及控制类别中的循环和条件积木块。<br><br>
+              如果需要保存你的项目，点击左上角的“文件”按钮，选择“保存到电脑”。<br> 
+                <span style="color:#bbb">*如果你用的是TurboWarp，可以在舞台的右上角点击保存到电脑。</span><br>        
+             这只是一个简单的 Scratch 入门教程，想做出更加复杂和有趣的项目，可以看看下面这篇文档。祝你玩得开心！</span><br><br><br>
+       <h2>二.扩展使用指南</h2>
+       <h3>1.了解扩展</h3>
+       <span>
+        找到左下角的方形按钮，并点击它。<br>
+          <span style="color:#bbb">*Scratch和TurboWarp都一样，在左下角。在这里可以添加Scratch自带的扩展和其他扩展，我们通常叫它扩展库。</span><br>
+        选择一个你喜欢的扩展，点击整个扩展展示的方形框即可导入至编辑器中。<br><br>
+        导入以后，左侧类别栏会多一个新的类别，点击它，里面的积木就是你导入的扩展的积木。</span><br>   
+          <span style="color:#bbb">*使用这些积木的方法和原来的一样，拖动即可。</span><br><br>
+        <h3>2.银河编程扩展使用教程</h3>
+        <img src="/doc/3.png" width="800px" height="850px"><br>
+        <span>
+        在扩展库中（银河编程版TurboWarp），第一个扩展是银河编程官方积木块。<br><br>          
+        导入后你会看到：“打开站内(网址)”、“复制(114514)到剪贴板”、“逐字说话(你干嘛哈哈哎哟)，间隔(0.1)秒”及“播放 你被骗了”四个积木。<br><br>
+        “打开站内(网址)”：你只需要输入银河编程网网址中“.top/”后面的内容即可跳转到对应的页面，也无需在后面添加“/”。<br><br>
+        “复制(114514)到剪贴板”：将“114514”改成想复制的内容，然后运行积木即可。<br><br>
+        “逐字说话(你干嘛哈哈哎哟)，间隔(0.1)秒”：把“你干嘛哈哈哎哟”改成想逐字说的内容，更改间隔的值，即可让角色逐字逐句的说你想说的内容。<br><br>
+        “播放 你被骗了”：这是一个有意思的功能，只需运行积木即可自动跳转到Rickroll视频页面。就是网上的热梗“你被骗了”。</span><br> 
+          <span style="color:#bbb">*可以偶尔使用，不建议经常用来和朋友开玩笑，影响彼此之间的感情。</span><br><br><br>
+        <h3>3.注意事项</h3>
+        <span>
+          如果你是用了银河编程扩展及TurboWarp扩展，在其他编辑器中是无法运行的。使用扩展前请考虑清楚，否则造成一切损失我们概不负责！
+        </span><br><br><br>
+    若你对扩展开发有兴趣，欢迎给官方邮箱GalaxyGZS@163.com投稿。<br><br><br><br>
+    <strong><p align="right" style="font-size:20px">由Zane于2023/10/1最后更新</p></strong>
+</div>
+<script src="/js/yiyan.js"></script>
+<div class="doc-footer">
+  <br>
+  <div class="other-link clearfix">
+   <div class="link-look clearfix">
+       <div class="link-list">
+         <h3 class="link-title" style="color:#ddd">链接</h3>
+         <ul>
+           <li>
+             <a href="/" class="doc-a" >银河编程工作室官网</a>
+           </li>
+           <li>
+             <a href="http://infinityspace.w1.luyouxia.net" class="doc-a" >无限宇宙编程社区</a>
+           </li>
+           <li>
+             <a href="https://chzane.github.io" class="doc-a" >海螺壳编程社区</a>
+           </li>
+         </ul>
+       </div>
+    <div class="sucai-companyname">
+       <h3 class="logo-footer">
+          <a href="/doc" style="color:#fff" class="footer-a"><span style="font-size:25px;height:30">银河编程文档站</span></strong>
+         </a>
+       </h3>
+    </div>
+       <div class="sucai-phone">
+       <div style="color:#ddd">随机文案：<span id="quote"></span></div>
+             </div>
+       <div class="sucai-qq" style="color:#ddd">
+                 “发掘无限创意，开启编程之旅！”<br><br> 
+                 网站由52Lzx、琦里香共同创建<br>
+         </div>
+       </div>
+              <div class="footer-bottom" style="color:#ddd">
+             <p style="color:#ddd">© 2022-2023 银河编程工作室 版权所有</p>
+              </div>
+     </div>
+   </div>
+</body>
+</html>

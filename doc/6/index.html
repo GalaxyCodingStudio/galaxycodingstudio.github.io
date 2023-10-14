@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>银河编程文档-api</title>
+    <meta name="description" content="银河编程网是一个搭载在线版图形化少儿编程的平台，发掘无限创意，开启编程之旅！">
+    <meta name="keywords" content="scratch，银河，银河编程，编程平台，银河编程网，scratch在线编程，scratch平台">
+    <link type="text/css" rel="stylesheet" href="/css/main.css"/>
+    <link rel="shortcut icon" href="/img/logo.ico">
+    <script src="/js/not.js"></script>
+    <style>
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .dark-mode {
+      background-color: #333; /* 深色背景色 */
+      color: #f5f5f5; /* 深色文字颜色 */
+    }
+    </style>
+</head>
+<body>
+    <script>
+        function toggleDarkMode() {
+          document.body.classList.add('dark-mode');
+        }
+    
+        function toggleLightMode() {
+          document.body.classList.remove('dark-mode');
+        }
+      </script>
+    <div class="screen">
+        <nav class="navbar navbar-expand-lg nav">
+        	<div class="container-fluid">
+        		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        		   <span class="navbar-toggler-icon"></span>
+        	    </button>
+        	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        			<li class="nav-item">
+                        <a class="navbar-brand logo-image index-logo-img" href="/doc">
+                           <strong><span style="font-size:25px">银河编程文档站</span></strong>
+                        </a>
+                    </li>
+              <div class="navbar-nav-right-box">
+        		<ul class="navbar-nav navbar-nav-right">   
+                    <button class="btn btn-outline-light" onclick="location.href='/main'">回到首页</button>
+                    <button onclick="toggleDarkMode()" class="btn btn-outline-light">深色模式</a>
+                    <button onclick="toggleLightMode()" class="btn btn-outline-light">浅色模式</a>
+        		</ul>
+        	  </div>
+            </div>
+        </nav>
+    </div>
+<div class="doc-leftCard">
+  <br><br><br><br>
+  <ul>
+    <li>
+       <a href="/doc/1" class="doc-a" style="color:#bbb">用户服务协议</a><br><br>
+    </li>
+    <li>
+        <a href="/doc/2" class="doc-a" style="color:#bbb">赞助我们</a><br><br>
+     </li>
+     <li>
+        <a href="/doc" class="doc-a" style="color:#bbb">介绍</a><br><br>
+     </li>
+     <li>
+        <a href="/doc/4" class="doc-a" style="color:#bbb">银河编程网功能大全</a><br><br>
+     </li>
+     <li>
+        <a href="/doc/5" class="doc-a" style="color:#bbb">银河编辑器扩展使用指南</a><br><br>
+     </li>
+     <li>
+        <a href="/doc/6" class="doc-a" style="color:#bbb">银河编程api</a><br><br>
+     </li>
+  </ul>
+</div>
+<div class="doc-rightCard">
+    <h1>1.随机文案API</h1><br>
+        <span id="quote"></span><br>
+        <span style="color:#000;font-size:20px">用get请求的方式，请求https://api-omega-opal.vercel.app/api/quote即可</span><br><br><br><br>
+    <h1>2.邮件发送器（163邮箱）</h1><br>
+    <form id="emailForm" onsubmit="sendEmail(event)">
+        <label>发送者邮箱</label><br><br>
+        <input type="email" id="sender" class="form-control" required><br><br>
+        <label>smtp码</label><br><br>
+        <input type="password" id="password" class="form-control" required><br><br>
+        <label>收件人</label><br><br>
+        <input type="email" id="recipient" class="form-control" required><br><br>
+        <label>主题</label><br><br>
+        <input type="text" id="subject" class="form-control" required><br><br>
+        <label>邮件内容</label><br><br>
+        <textarea id="body" rows="10" cols="30" class="form-control" required></textarea><br><br>
+        <input type="submit" value="发送邮件" class="btn btn-outline-light">
+    </form>
+
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+
+            var sender = document.getElementById("sender").value;
+            var password = document.getElementById("password").value;
+            var recipient = document.getElementById("recipient").value;
+            var subject = document.getElementById("subject").value;
+            var body = document.getElementById("body").value;
+
+            var jsonData = {
+                sender: sender,
+                password: password,
+                recipient: recipient,
+                subject: subject,
+                body: body
+            };
+
+            fetch("/api/email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(jsonData)
+            })
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(data) {
+                alert(data);
+            })
+            .catch(function(error) {
+                console.error("Error:", error);
+            });
+        }
+
+                // 发起GET请求
+                function fetchRandomQuote() {
+            fetch('/api/quote')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.quote) {
+                        document.getElementById("quote").innerHTML = data.quote;
+                    }
+                })
+                .catch(error => console.log('Error:', error));
+        }
+
+        window.onload = fetchRandomQuote;  // 页面加载时自动获取随机文案
+    </script>
+    *造成一切损失我们概不负责！<br><br><br><br>
+    <strong><p align="right" style="font-size:20px">由Rundll86于2023/9/17最后更新</p></strong>
+</div>
+<script src="/js/yiyan.js"></script>
+<div class="doc-footer">
+  <br>
+  <div class="other-link clearfix">
+   <div class="link-look clearfix">
+       <div class="link-list">
+         <h3 class="link-title" style="color:#ddd">链接</h3>
+         <ul>
+           <li>
+             <a href="/" class="doc-a" >银河编程工作室官网</a>
+           </li>
+           <li>
+             <a href="http://infinityspace.w1.luyouxia.net" class="doc-a" >无限宇宙编程社区</a>
+           </li>
+           <li>
+             <a href="https://chzane.github.io" class="doc-a" >海螺壳编程社区</a>
+           </li>
+         </ul>
+       </div>
+    <div class="sucai-companyname">
+       <h3 class="logo-footer">
+          <a href="/doc" style="color:#fff" class="footer-a"><span style="font-size:25px;height:30">银河编程文档站</span></strong>
+         </a>
+       </h3>
+    </div>
+       <div class="sucai-phone">
+       <div style="color:#ddd">随机文案：<span id="quote"></span></div>
+             </div>
+       <div class="sucai-qq" style="color:#ddd">
+                 “发掘无限创意，开启编程之旅！”<br><br> 
+                 网站由52Lzx、琦里香共同创建<br>
+         </div>
+       </div>
+              <div class="footer-bottom" style="color:#ddd">
+             <p style="color:#ddd">© 2022-2023 银河编程工作室 版权所有</p>
+              </div>
+     </div>
+   </div>
+</body>
+</html>
