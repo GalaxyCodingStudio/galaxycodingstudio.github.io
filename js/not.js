@@ -1,8 +1,3 @@
-window.addEventListener('load', function() {
-    alert('赞助我们：http://galaxy.ates.top/doc/2');
-});
-
-
 document.write("<div id=\"overlay\"></div>")
 var overlay = document.getElementById("overlay");
 
@@ -46,7 +41,3 @@ function checkWidth() {
         overlay.style.display = "none";
     }
 }
-
-// 页面加载时检查页面宽度，并注册窗口调整大小的事件监听器
-window.addEventListener("load", checkWidth);
-window.addEventListener("resize", checkWidth);
