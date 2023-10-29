@@ -41,3 +41,14 @@ function checkWidth() {
         overlay.style.display = "none";
     }
 }
+
+// 页面加载时检查页面宽度，并注册窗口调整大小的事件监听器
+window.addEventListener("load", checkWidth);
+window.addEventListener("resize", checkWidth);
+
+
+
+
+window.addEventListener('load', function() {
+    alert('小提示：可以在https://galaxycodingstudios/doc/2赞助、支持我们，有机会上榜哦！');
+});
