@@ -35,15 +35,18 @@
 
       @keyframes float {
           0% {
-              transform: translate(0px,500px);
+              transform: rotateY(0deg) rotate(0deg);
+              background-color: transparent;
           }
 
-          40% {
-              transform: translate(-250px,250px);
+          50% {
+              transform: rotateY(360deg) rotate(360deg);
+              background-color: red;
           }
 
           80% {
-              transform: translate(-178px,-300px);
+              transform: rotateY(0deg) rotate(0deg);
+              background-color: transparent;
           }
       }
   </style>
