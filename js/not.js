@@ -21,7 +21,7 @@ document.head.appendChild(styleElement);
 // 创建并设置文字元素
 var text = document.createElement("div");
 text.classList.add("text");
-text.innerHTML = "不支持手机端访问，请在电脑端查看";
+text.innerHTML = "网站升级中，敬请期待…";
 
 // 设置文字样式
 text.style.position = "absolute";
@@ -35,7 +35,7 @@ text.style.textAlign = "center";
 overlay.appendChild(text);
 
 function checkWidth() {
-    if (window.innerWidth < 750) {
+    if (window.innerWidth < 75000000000000000000000000) {
         overlay.style.display = "block";
     } else {
         overlay.style.display = "none";
@@ -49,6 +49,6 @@ window.addEventListener("resize", checkWidth);
 
 
 
-window.addEventListener('load', function() {
+// window.addEventListener('load', function() {
     alert('小提示：可以在https://galaxycodingstudios/doc/2赞助、支持我们，有机会上榜哦！');
 });
