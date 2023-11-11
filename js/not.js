@@ -1,4 +1,4 @@
-document.write("<div id=\"overlay\"></div>")
+document.write("<div id=\"overlay\"><span class="text">网站升级中，暂时无法使用</span><br><br><a href=\"/chanping\" style=\"color:#fff\" class\="footer-a\">< 我们的产品 ></a><br><br><a href=\"/doc/2\" style=\"color:#fff\" class\="footer-a\">< 赞助我们 ></a><br><br></div>")
 var overlay = document.getElementById("overlay");
 
 // 创建样式元素并设置蒙版样式
@@ -18,10 +18,6 @@ styleElement.innerHTML = `
 
 document.head.appendChild(styleElement);
 
-// 创建并设置文字元素
-var text = document.createElement("div");
-text.classList.add("text");
-text.innerHTML = "网站升级中，敬请期待…";
 
 // 设置文字样式
 text.style.position = "absolute";
@@ -33,22 +29,3 @@ text.style.textAlign = "center";
 
 // 将文字元素添加到蒙版中
 overlay.appendChild(text);
-
-function checkWidth() {
-    if (window.innerWidth < 75000000000000000000000000) {
-        overlay.style.display = "block";
-    } else {
-        overlay.style.display = "none";
-    }
-}
-
-// 页面加载时检查页面宽度，并注册窗口调整大小的事件监听器
-window.addEventListener("load", checkWidth);
-window.addEventListener("resize", checkWidth);
-
-
-
-
-// window.addEventListener('load', function() {
-    alert('小提示：可以在https://galaxycodingstudios/doc/2赞助、支持我们，有机会上榜哦！');
-});
