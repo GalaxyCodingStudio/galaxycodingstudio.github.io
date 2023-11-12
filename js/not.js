@@ -1,5 +1,5 @@
 document.write("<div id=\"overlay\"><span class=\"text\">网站升级中，暂时无法使用…</span><br><br><a href=\"/chanping\" style=\"color:#fff\" class=\"footer-a\">< 我们的产品 ></a><br><br><a href=\"/doc/2\" style=\"color:#fff\" class=\"footer-a\">< 赞助我们 ></a><br><br></div>");
-
+document.head.appendChild(styleElement);
 var overlay = document.getElementById("overlay");
 
 // 创建样式元素并设置蒙版样式
@@ -24,8 +24,6 @@ styleElement.innerHTML = `
         color: #fff;
         text-align: center;
     }`;
-
-document.head.appendChild(styleElement);
 
 // 获取文本元素
 var text = document.querySelector("#overlay .text");
