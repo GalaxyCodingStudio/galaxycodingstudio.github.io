@@ -1,12 +1,20 @@
 document.write("<div id=\"overlay\"><span class=\"text\">网站升级中，暂时无法使用…</span><br><br><a href=\"/chanping\" style=\"color:#fff\" class=\"footer-a\">< 我们的产品 ></a><br><br><a href=\"/doc/2\" style=\"color:#fff\" class=\"footer-a\">< 赞助我们 ></a><br><br></div>");
 document.head.appendChild(styleElement);
 var overlay = document.getElementById("overlay");
+    document.addEventListener("DOMContentLoaded", function() {
+        var overlay = document.getElementById("overlay");
 
-// 创建样式元素并设置蒙版样式
-var styleElement = document.createElement("style");
-styleElement.innerHTML = `
-    /* 定义蒙版样式 */
-    #overlay {
+        function showOverlay() {
+            overlay.style.display = "block";
+        }
+
+        function hideOverlay() {
+            overlay.style.display = "none";
+        }
+
+        var styleElement = document.createElement("style");
+        styleElement.innerHTML = `
+   #overlay {
         display: none; /* 最初不显示 */
         position: fixed; /* 固定在窗口上方 */
         top: 0;
@@ -23,10 +31,11 @@ styleElement.innerHTML = `
         transform: translate(-50%, -50%);
         color: #fff;
         text-align: center;
-    }`;
+    };
+        `;
 
-// 获取文本元素
-var text = document.querySelector("#overlay .text");
+        document.head.appendChild(styleElement);
 
-// 将文字元素添加到蒙版中
-overlay.appendChild(text);
+        var text = document.querySelector("#overlay .text");
+        overlay.appendChild(text);
+    });
