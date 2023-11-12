@@ -12,7 +12,7 @@ styleElement.innerHTML = `
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.93); /* 半透明黑色背景 */
+        background-color: rgba(0, 0, 0, 0.98); /* 半透明黑色背景 */
         z-index: 99999999999999999999999999999999999999999999999999999; /* 设置z-index使其覆盖其他元素 */
     }`
 
@@ -35,7 +35,7 @@ text.style.textAlign = "center";
 overlay.appendChild(text);
 
 function checkWidth() {
-    if (window.innerWidth < 3000) {
+    if (window.innerWidth < 99000) {
         overlay.style.display = "block";
     } else {
         overlay.style.display = "none";
