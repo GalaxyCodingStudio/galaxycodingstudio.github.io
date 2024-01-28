@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>银河编程官网-首页</title>
+    <meta name="description" content="银河编程网是一个搭载在线版图形化少儿编程的平台，发掘无限创意，开启编程之旅！">
+    <meta name="keywords" content="scratch，银河，银河编程，银河编程工作室，银河编程工作室官网，，官网，scratch在线编程，scratch平台，共创世界,CCW,Scratch,西瓜编程,西瓜社区,编程社区,西瓜创客,少儿编程,儿童编程 Scratch中文社区,Scratch中国,scratch官网,A营,阿尔法营,aerfaying,稽木世界,积木世界,编程猫社区,学而思编程,网易有道卡搭,小码王,核桃编程,迷你编程,动画,Scratch云变量,Scratch云列表,Scratch物理引擎,Scratch物理碰撞,scratch物理仿真,Scratch联机,Turbo warp,Scratch游戏制作,Scratch游戏代码, Scratch游戏制作,Scratch游戏教程,Scratch游戏案例,Scratch作品教程,scratch作业,scratch素材,信息课作业,游戏,小说,创意,创客,教程,小学信息技术,编程,机器人,可视化编程,图形化编程,GameJam,STEAM,Python,HTML,Turtle,Pygame,乐高,独立游戏,游戏制作,动画制作,创造力,逻辑思维,小游戏,跑酷">
+    <link type="text/css" rel="stylesheet" href="/css/main.css"/>
+    <link rel="shortcut icon" href="/img/logo.ico">
+</head>
+    <script src="/js/header.js"></script>
+<body>
+  <script>
+    var text = "“发掘无限创意，开启编程之旅！”";
+    var speed = 150; 
+    var index = 0;
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = function() {
+      typeWriter();
+    };
+  </script>
+  <center>
+  <div class="logo-container">
+    <div id="text" style="font-size:50px;color: coral;"></div><br>
+    <img class="logo-img" src="./logo.svg"><br>
+    <h3>银河编程工作室 GalaxyCodingStudio</h3>
+  </div><br><br>
+    <span style="font-size:23px;">服务</span><br>
+    <span style="font-size:50px;">------ · ------</span><br>
+      <button class="btn btn-outline-warning" onclick="location.href='/about'">关于我们</button>
+      <button class="btn btn-outline-warning" onclick="location.href='/qf'">赞助我们</button>
+      <button class="btn btn-outline-warning" onclick="location.href='/jr_us'">加入我们</button><br><br><br>
+  </center>
+  <div class="doc1-Card">
+    <h2 align="center">《优质作品征集公告》</h2>
+    征集优秀作品活动！要求如下：<br><br>
+    1.作品总积木数需要达到600；<br>
+    2.游戏类完整可正常玩，工具/算法/引擎可正常使用有合适用途；<br>
+    3.不能转载、抄袭、改编；<br>
+    4.知名度较高；<br>
+    5.技术难度高，创意新颖，UI美观，体验良好，无较多较大bug；<br>
+    6.不能使用（银河编程除外）任何社区的扩展，否则无法使用。<br>
+    符合如上要求，欢迎给官方邮箱GalaxyGZS@163.com进行投稿！<br><br>
+    <span style="float:right">8月6日</span><br>
+    <span style="float:right">银河编程工作室（宣）</span><br><br>
+  </div><br><br>
+    <div class="index-Card">
+      <h4>🎉优质作品展</h4>
+      <div class="projectbox container">
+        <a href="/project/1"><img class="projectbox facer" src="/project/1/封面.jpg"></a><br>
+        <div class="projectbox content">
+            <a class="projectbox content-title" href="/project/1">《強風オールバック》</a><br>
+            <span class="projectbox content-text">作者：复活大使</span><br>
+            <span class="projectbox label">音乐</span>
+        </div>
+    </div>
+    <div class="projectbox container">
+      <a href="/project/2"><img class="projectbox facer" src="/project/2/封面.jpg"></a><br>
+      <div class="projectbox content">
+          <a class="projectbox content-title" href="/project/2">《鱼叉猎人》</a><br>
+          <span class="projectbox content-text">作者：复活大使</span><br>
+          <span class="projectbox label">游戏</span>
+      </div>
+  </div>
+  <div class="projectbox container">
+    <a href="/project/3"><img class="projectbox facer" src="/project/3/封面.jpg"></a><br>
+    <div class="projectbox content">
+        <a class="projectbox content-title" href="/project/3">《【搞笑动画】》</a><br>
+        <span class="projectbox content-text">作者：琦怪的人呀</span><br>
+        <span class="projectbox label">动画</span>
+    </div>
+  </div>
+  <div class="projectbox container">
+    <a href="/project/4"><img class="projectbox facer" src="/project/4/封面.jpg"></a><br>
+    <div class="projectbox content">
+        <a class="projectbox content-title" href="/project/4">《极限跑酷》</a><br>
+        <span class="projectbox content-text">作者：琦怪的人呀</span><br>
+        <span class="projectbox label">游戏</span>
+    </div>
+  </div>
+  <div class="projectbox container">
+    <a href="/project/5"><img class="projectbox facer" src="/project/5/封面.jpg"></a><br>
+    <div class="projectbox content">
+        <a class="projectbox content-title" href="/project/5">《自制阴乐<孤勇者>》</a><br>
+        <span class="projectbox content-text">作者：琦怪的人呀</span><br>
+        <span class="projectbox label">音乐</span>
+    </div>
+  </div>
+  <div class="projectbox container">
+    <a href="/project/6"><img class="projectbox facer" src="/project/6/封面.jpg"></a><br>
+    <div class="projectbox content">
+        <a class="projectbox content-title" href="/project/6">《Outside the TOWER》</a><br>
+        <span class="projectbox content-text">作者：Rundll86</span><br>
+        <span class="projectbox label">游戏</span>
+    </div>
+  </div>
+  <div class="projectbox container">
+    <a href="/project/7"><img class="projectbox facer" src="/project/7/封面.jpg"></a><br>
+    <div class="projectbox content">
+        <a class="projectbox content-title" href="/project/7">《Windows12》</a><br>
+        <span class="projectbox content-text">作者：王哲</span><br>
+        <span class="projectbox label">科技</span>
+    </div>
+  </div>
+      </div><br><br>
+</body>
+    <script src="/js/footer.js"></script>
+</html>
